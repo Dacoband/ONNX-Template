@@ -11,8 +11,8 @@ namespace OnnxRuntime.ResNet.Template
         public static void Main(string[] args)
         {
             // Read paths
-            string modelFilePath = @"C:\code\onnxruntime-templates\onnxruntime-csharp-cv-template\model\resnet50v2.onnx";
-            string imageFilePath = @"C:\code\onnxruntime-templates\onnxruntime-csharp-cv-template\data\dog.jpeg";
+            string modelFilePath = @"D:\OJT_SU24\ONNX-Template\model\resnet50v2.onnx";
+            string imageFilePath = @"D:\OJT_SU24\ONNX-Template\data\dog.jpeg";
 
             var input = ImageHelper.GetImageTensorFromPath(imageFilePath);
             var top10 = ModelHelper.GetPredictions(input, modelFilePath);
