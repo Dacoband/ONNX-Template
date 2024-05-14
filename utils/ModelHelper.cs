@@ -28,6 +28,7 @@ namespace OnnxRuntime.ResNet.Template.utils
             //List<Prediction> top10 = softmax.Select((x, i) => new Prediction { Label = LabelMap.Labels[i], Confidence = x })
             //                   .OrderByDescending(x => x.Confidence)
             //                   .Take(10).ToList();
+
             var resultTensor = results.First().AsTensor<float>();
 
             return resultTensor;
