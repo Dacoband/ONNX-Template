@@ -32,7 +32,9 @@ namespace OnnxRuntime.ResNet.Template
             Console.WriteLine(string.Join(", ", shape.ToArray()));
 
 
-            // var output = ModelHelper.GetPredictions(combinedInput, modelFilePath);
+            var output = ModelHelper.GetPredictions(combinedInput, modelFilePath);
+            ReadOnlySpan<int> shape1 = output.Dimensions;
+            Console.WriteLine(string.Join(", ", shape1.ToArray()));
 
             //Console.WriteLine($"Output: {string.Join(",", output.)}");
         }
