@@ -12,12 +12,12 @@ namespace OnnxRuntime.ResNet.Template
         public static void Main(string[] args)
         {
             // Read paths
-            string modelFilePath = @"D:\OJT_SU24\ONNX-Template\model\test_wb.onnx";
+            string modelFilePath = @"D:\OJT_SU24\ONNX-Template\TemplateONNX\model\test_wb.onnx";
             var imageFilePath = new List<string>
     {
-        @"D:\OJT_SU24\ONNX-Template\data\8D5U5524_D.png",
-        @"D:\OJT_SU24\ONNX-Template\data\8D5U5524_S.png",
-        @"D:\OJT_SU24\ONNX-Template\data\8D5U5524_T.png"
+        @"D:\OJT_SU24\ONNX-Template\TemplateONNX\data\8D5U5524_D.png",
+        @"D:\OJT_SU24\ONNX-Template\TemplateONNX\data\8D5U5524_S.png",
+        @"D:\OJT_SU24\ONNX-Template\TemplateONNX\data\8D5U5524_T.png"
     };
 
             // Get tensors for each image
