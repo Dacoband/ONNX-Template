@@ -8,12 +8,12 @@ namespace OnnxRuntime.ResNet.Template.utils
 {
     public static class ModelHelper
     {
-        public static List<Prediction> GetPredictions(Tensor<float> input, string modelFilePath)
+        public static List<float> GetPredictions(Tensor<float> input, string modelFilePath)
         {
             // Setup inputs
             var inputs = new List<NamedOnnxValue>
             {
-                NamedOnnxValue.CreateFromTensor("data", input)
+                NamedOnnxValue.CreateFromTensor("modelInput", input)
             };
 
             // Run inference
@@ -25,10 +25,10 @@ namespace OnnxRuntime.ResNet.Template.utils
             List<float> softmax = results.Select(x => (float)Math.Exp(x) / sum).ToList();
 
             // Extract top 10 predicted classes
-            List<Prediction> top10 = softmax.Select((x, i) => new Prediction { Label = LabelMap.Labels[i], Confidence = x })
-                               .OrderByDescending(x => x.Confidence)
-                               .Take(10).ToList();
-            return top10;
+            //List<Prediction> top10 = softmax.Select((x, i) => new Prediction { Label = LabelMap.Labels[i], Confidence = x })
+            //                   .OrderByDescending(x => x.Confidence)
+            //                   .Take(10).ToList();
+            return softmax;
 
         }
     }
